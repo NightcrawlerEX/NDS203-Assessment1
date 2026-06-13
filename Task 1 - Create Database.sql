@@ -33,8 +33,7 @@ CREATE TABLE IF NOT EXISTS Location (
     RegionID INT NOT NULL, -- FK
     LocationName VARCHAR(50) NOT NULL,
     
-    FOREIGN KEY (RegionID)
-        REFERENCES Region(RegionID)
+    FOREIGN KEY (RegionID) REFERENCES Region(RegionID)
 );
 
 
@@ -47,7 +46,21 @@ CREATE TABLE IF NOT EXISTS Quest (
     LocationID INT NOT NULL, -- FK
     QuestName VARCHAR(100) NOT NULL,
 
-    FOREIGN KEY (LocationID)
-        REFERENCES Location(LocationID)
+    FOREIGN KEY (LocationID) REFERENCES Location(LocationID)
 );
 
+-- ===================================================================================================
+-- ======================================= Skill ====================================================
+-- ===================================================================================================
+
+CREATE TABLE IF NOT EXISTS SkillType (
+    SkillTypeID INT PRIMARY KEY,
+    SkillTypeName VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Skill (
+    SkillID INT PRIMARY KEY,
+    SkillTypeID INT NOT NULL, -- FK
+    SkillName VARCHAR(40) NOT NULL,
+    FOREIGN KEY (SkillTypeID) REFERENCES SkillType(SkillTypeID)
+);
