@@ -103,3 +103,11 @@ CREATE TABLE IF NOT EXISTS PlayerSkill (
     FOREIGN KEY (SkillID) REFERENCES Skill(SkillID),
     FOREIGN KEY (PlayerID) REFERENCES Player(PlayerID)
 );
+
+CREATE TABLE IF NOT EXISTS PlayerQuest (
+    PlayerQuestID INT PRIMARY KEY,
+    PlayerID INT NOT NULL, -- FK
+    QuestID INT NOT NULL, -- FK
+    FOREIGN KEY (PlayerID) REFERENCES Player(PlayerID),
+    FOREIGN KEY (QuestID) REFERENCES Quest(QuestID)
+);

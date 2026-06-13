@@ -92,3 +92,9 @@ INSERT INTO PlayerSkill(PlayerSkillID, PlayerID, SkillID) VALUES
 (17, 6, 2),
 (18, 6, 14),
 (19, 6, 7);
+
+INSERT INTO PlayerQuest(PlayerQuestID, PlayerID, QuestID) VALUES
+(1, 1, 1),
+(2, 2, 2),
+(3, 3, 3),
+(4, 6, 4);
