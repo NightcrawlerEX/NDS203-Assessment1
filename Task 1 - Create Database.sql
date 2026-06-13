@@ -10,14 +10,25 @@ USE A00125081;
 
 -- Regions
 -- An argument could be made to have region type as its own table but we will cross that bridge when 
--- we come to it. Most apps perform reads far more often than writes and joins are expensive so I
--- won't create a seperate table. Perhaps this is not 'normalised' but I would rather not abstract 
--- simply for the sake of hitting a random KPI
+-- we come to it. Perhaps this is not 'normalised' but I would rather not abstract for simplicity
+
+-- Region code could have been chosen as PK but I chose to just use an integer
 
 CREATE TABLE IF NOT EXISTS Region (
     RegionID INT PRIMARY KEY,
     RegionCode CHAR(3) NOT NULL UNIQUE,
-    RegionName VARCHAR(45) NOT NULL,
-    RegionType VARCHAR(45) NOT NULL
+    RegionName VARCHAR(50) NOT NULL,
+    RegionType VARCHAR(50) NOT NULL
 );
 
+
+-- Locations
+
+CREATE TABLE IF NOT EXISTS Location (
+    LocationID INT PRIMARY KEY,
+    RegionID INT NOT NULL, -- FK
+    LocationName VARCHAR(50) NOT NULL,
+    
+    FOREIGN KEY (RegionID)
+        REFERENCES Region(RegionID)
+);
