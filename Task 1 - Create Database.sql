@@ -1,5 +1,7 @@
 -- Student: James Simpson
 -- Student No: A00125081
+-- https://github.com/NightcrawlerEX/NDS203-Assessment1
+
 -- Task 1: Design The Database
 
 -- Regions
