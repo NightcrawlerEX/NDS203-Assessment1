@@ -20,3 +20,8 @@ INSERT INTO Location(LocationID, RegionID, LocationName) VALUES
 (4, 1, 'Poor Quarter'),
 (5, 1, 'Arcane Capital');
 
+INSERT INTO Quest(QuestID, LocationID, QuestName) VALUES
+(1, 1, 'Kill the dragon lord: Aegeras'),
+(2, 2, 'Clear the training room of summoned creatures'),
+(3, 3, 'Capture a storm giant'),
+(4, 5, 'Research the blue crystal');

@@ -8,7 +8,9 @@
 CREATE DATABASE IF NOT EXISTS A00125081; -- student number for database name
 USE A00125081;
 
--- Regions
+-- ===================================================================================================
+-- ====================================== Region ====================================================
+-- ===================================================================================================
 -- An argument could be made to have region type as its own table but we will cross that bridge when 
 -- we come to it. Perhaps this is not 'normalised' but I would rather not abstract for simplicity
 
@@ -22,7 +24,9 @@ CREATE TABLE IF NOT EXISTS Region (
 );
 
 
--- Locations
+-- ===================================================================================================
+-- ===================================== Location ====================================================
+-- ===================================================================================================
 
 CREATE TABLE IF NOT EXISTS Location (
     LocationID INT PRIMARY KEY,
@@ -31,4 +35,18 @@ CREATE TABLE IF NOT EXISTS Location (
     
     FOREIGN KEY (RegionID)
         REFERENCES Region(RegionID)
+);
+
+
+-- ===================================================================================================
+-- ======================================= Quest ====================================================
+-- ===================================================================================================
+
+CREATE TABLE IF NOT EXISTS Quest (
+    QuestID INT PRIMARY KEY,
+    LocationID INT NOT NULL, -- FK
+    QuestName VARCHAR(100) NOT NULL,
+
+    FOREIGN KEY (LocationID)
+        REFERENCES Location(LocationID)
 );
