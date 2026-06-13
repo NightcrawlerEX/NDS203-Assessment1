@@ -19,3 +19,6 @@ END;
 
 -- Reference:
 -- MySQL CASE Statement. (n.d.). Www.w3schools.com. https://www.w3schools.com/mysql/mysql_case.asp
+
+SELECT FirstName, LastName, Gender
+FROM Player
