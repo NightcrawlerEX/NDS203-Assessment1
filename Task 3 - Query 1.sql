@@ -6,3 +6,8 @@
 -- Display Columns: Name and Type.
 
 USE A00125081; -- database name is student number
+
+SELECT SkillName, SkillType
+FROM Skill
+LEFT JOIN SkillType
+    On Skill.SkillTypeID = SkillType.SkillTypeID
