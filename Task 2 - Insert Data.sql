@@ -3,7 +3,7 @@
 -- https://github.com/NightcrawlerEX/NDS203-Assessment1
 -- Task 2: Insert Data
 
-USE A00125081; --database name is student number
+USE A00125081; -- database name is student number
 
 -- ==============================================================================
 -- ============================ Task 2: Insert Data =============================

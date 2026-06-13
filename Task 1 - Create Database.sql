@@ -50,3 +50,4 @@ CREATE TABLE IF NOT EXISTS Quest (
     FOREIGN KEY (LocationID)
         REFERENCES Location(LocationID)
 );
+
