@@ -5,6 +5,6 @@
 USE A00125081; --database name is student number
 
 -- Task 2
-INSERT INTO Region (RegionCode, RegionName, RegionType) VALUES
-('ARC', 'Arcanum', 'Large Scale City'),
-('HER', 'Herodi' 'Magical Demiplane');
+INSERT INTO Region (RegionID, RegionCode, RegionName, RegionType) VALUES
+(1, 'ARC', 'Arcanum', 'Large Scale City'),
+(2, 'HER', 'Herodi', 'Magical Demiplane');
