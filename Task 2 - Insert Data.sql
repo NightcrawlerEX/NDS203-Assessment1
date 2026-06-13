@@ -47,4 +47,48 @@ INSERT INTO Skill(SkillID, SkillTypeID, SkillName) VALUES
 (13, 2, 'Thunder Bolt'),
 (14, 2, 'Arcane Storm');
 
+INSERT INTO Faction(FactionID, FactionCode, FactionName, FactionMotto) VALUES
+(1, 'MAG', 'School of Magicians', 'Always a spell for the job'),
+(2, 'WAR', 'Warriors United', 'Ready for war!'),
+(3, 'ROG', 'Rogues Guild', 'Never get caught');
 
+
+INSERT INTO Player(PlayerID, FirstName, LastName, Gender) VALUES
+(1, 'Adelina', 'Dragonscream', 'F'),
+(2, 'Agaell', 'Clavira', 'F'),
+(3, 'Alicia', 'Stormmane', 'F'),
+(4, 'Cara', 'the Menace', 'F'),
+(5, 'Davis', 'Smokes', 'M'),
+(6, 'Pikipius', 'Tepewrick', 'M');
+
+INSERT INTO Member(MemberID, FactionID, PlayerID) VALUES
+(1, 1, 1),
+(2, 2, 1),
+(3, 1, 2),
+(4, 2, 3),
+(5, 2, 4),
+(6, 3, 4),
+(7, 3, 5),
+(8, 1, 6),
+(9, 2, 6);
+
+INSERT INTO PlayerSkill(PlayerSkillID, PlayerID, SkillID) VALUES
+(1, 1, 1),
+(2, 1, 2),
+(3, 2, 3),
+(4, 3, 4),
+(5, 3, 5),
+(6, 4, 6),
+(7, 4, 7),
+(8, 4, 1),
+(9, 4, 8),
+(10, 5, 9),
+(11, 5, 10),
+(12, 5, 11),
+(13, 6, 3),
+(14, 6, 12),
+(15, 6, 13),
+(16, 6, 4),
+(17, 6, 2),
+(18, 6, 14),
+(19, 6, 7);

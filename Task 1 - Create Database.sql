@@ -64,3 +64,42 @@ CREATE TABLE IF NOT EXISTS Skill (
     SkillName VARCHAR(40) NOT NULL,
     FOREIGN KEY (SkillTypeID) REFERENCES SkillType(SkillTypeID)
 );
+
+-- ===================================================================================================
+-- ======================================= Faction ===================================================
+-- ===================================================================================================
+
+CREATE TABLE IF NOT EXISTS Faction (
+    FactionID INT PRIMARY KEY,
+    FactionCode VARCHAR(5) NOT NULL,
+    FactionName VARCHAR(50) NOT NULL,
+    FactionMotto VARCHAR(100)
+);
+
+-- ===================================================================================================
+-- ===================================== Player ===================================================
+-- ===================================================================================================
+
+CREATE TABLE IF NOT EXISTS Player(
+    PlayerID INT PRIMARY KEY,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
+    Gender CHAR(1) NOT NULL
+);
+
+
+CREATE TABLE IF NOT EXISTS Member (
+    MemberID INT PRIMARY KEY,
+    FactionID INT NOT NULL, -- FK
+    PlayerID INT NOT NULL, -- FK
+    FOREIGN KEY (FactionID) REFERENCES Faction(FactionID),
+    FOREIGN KEY (PlayerID) REFERENCES Player(PlayerID)
+);
+
+CREATE TABLE IF NOT EXISTS PlayerSkill (
+    PlayerSkillID INT PRIMARY KEY,
+    SkillID INT NOT null, -- FK
+    PlayerID INT NOT null, -- FK
+    FOREIGN KEY (SkillID) REFERENCES Skill(SkillID),
+    FOREIGN KEY (PlayerID) REFERENCES Player(PlayerID)
+);
