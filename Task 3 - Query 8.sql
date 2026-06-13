@@ -9,3 +9,13 @@
 
 USE A00125081; -- database name is student number
 
+ALTER TABLE Player MODIFY Gender CHAR(6);
+
+UPDATE Player
+SET Gender = CASE Gender
+    WHEN 'M' THEN "Male"
+    WHEN 'F' THEN "Female"
+END;
+
+-- Reference:
+-- MySQL CASE Statement. (n.d.). Www.w3schools.com. https://www.w3schools.com/mysql/mysql_case.asp
