@@ -7,3 +7,6 @@
 
 USE A00125081; -- database name is student number
 
+SELECT FirstName, LastName
+FROM Player
+WHERE Gender = 'F'
