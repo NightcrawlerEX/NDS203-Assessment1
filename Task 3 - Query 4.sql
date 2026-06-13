@@ -6,3 +6,10 @@
 -- Display Columns: Quest Name, NPC First Name
 
 USE A00125081; -- database name is student number
+
+SELECT Quest.QuestName, Player.FirstName
+FROM Player
+LEFT JOIN PlayerQuest ON Player.PlayerID = PlayerQuest.PlayerID
+LEFT JOIN Quest ON Quest.QuestID = PlayerQuest.QuestID
+LEFT JOIN Location ON Location.LocationID = Quest.LocationID
+WHERE Location.LocationName = 'Arcane Capital'
